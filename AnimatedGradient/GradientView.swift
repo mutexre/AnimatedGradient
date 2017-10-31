@@ -7,10 +7,6 @@ import UIKit
 
 class GradientView : UIView, CAAnimationDelegate
 {
-    let gradient = CAGradientLayer()
-    var gradientSet = [[CGColor]]()
-    var currentGradient: Int = 0
- 
     @IBInspectable var duration: Double = 1.0
     
     @IBInspectable var color1: UIColor = UIColor(red: 48/255, green: 62/255, blue: 103/255, alpha: 1) {
@@ -31,6 +27,7 @@ class GradientView : UIView, CAAnimationDelegate
         }
     }
     
+    private let gradient = CAGradientLayer()
     private var cgColor1: CGColor!
     private var cgColor2: CGColor!
     private var cgColor3: CGColor!
@@ -77,12 +74,5 @@ class GradientView : UIView, CAAnimationDelegate
     
     override func layoutSubviews() {
         gradient.frame = bounds
-    }
-}
-
-class ViewController: UIViewController
-{
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 }
